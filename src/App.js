@@ -1,5 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import { Select } from "antd";
+
+import "antd/dist/antd.css"; // or 'antd/dist/antd.less'
+import logo from "./logo.svg";
+import "./App.css";
+
+const { Option } = Select;
+
+function handleChange(value) {
+  console.log(`selected ${value}`);
+}
 
 function App() {
   return (
@@ -17,6 +26,15 @@ function App() {
         >
           Learn React
         </a>
+        <Select
+          defaultValue="lucy"
+          style={{ width: 120 }}
+          onChange={handleChange}
+        >
+          <Option value="jack">Jack</Option>
+          <Option value="lucy">Lucy</Option>
+          <Option value="Yiminghe">yiminghe</Option>
+        </Select>
       </header>
     </div>
   );
