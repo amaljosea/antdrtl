@@ -34,7 +34,7 @@ function App() {
         >
           <Option value="jack">Jack</Option>
           <Option value="lucy">Lucy</Option>
-          <Option value="Yiminghe">yiminghe</Option>
+          <Option value="Yiminghe">Yiminghe</Option>
         </Select>
       </header>
     </div>
