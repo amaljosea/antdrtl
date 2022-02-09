@@ -8,30 +8,26 @@ test("antd select renders", () => {
 });
 
 test("open", () => {
-  const { container } = render(<App />);
+  render(<App />);
+
+  // making sure the select is rendered
   let select = screen.getByTitle("Lucy");
   expect(select).toBeInTheDocument();
 
+  // making sure the select is not opened
   let yimingheOption = screen.queryByTitle("Yiminghe");
   expect(yimingheOption).not.toBeInTheDocument();
 
   fireEvent.mouseDown(select);
+
   console.log = jest.fn();
 
+  // making sure the select is opened after fireEvent.mouseDown(select);
   let yimingheOptionAfterOpening = screen.getByTitle("Yiminghe");
   expect(yimingheOptionAfterOpening).toBeInTheDocument();
 
-  // fireEvent.keyDown(container.ownerDocument, {
-  //   key: "Enter",
-  //   code: "Enter",
-  //   charCode: 13,
-  // });
+  fireEvent.click(yimingheOptionAfterOpening);
 
-  // fireEvent.keyDown(container.ownerDocument, {
-  //   key: "ArrowDown",
-  //   code: "ArrowDown",
-  //   charCode: 40,
-  // });
-
-  // expect(console.log.mock.calls[0][0]).toBe("selected Yiminghe");
+  // making sure console.log is called
+  expect(console.log.mock.calls[0][0]).toBe("selected Yiminghe!");
 });

@@ -7,7 +7,7 @@ import "./App.css";
 const { Option } = Select;
 
 function handleChange(value) {
-  console.log(`selected ${value}`);
+  console.log(`selected ${value}!`);
 }
 
 function App() {
