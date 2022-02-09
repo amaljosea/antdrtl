@@ -27,6 +27,7 @@ function App() {
           Learn React
         </a>
         <Select
+          data-testid="people-select"
           defaultValue="lucy"
           style={{ width: 120 }}
           onChange={handleChange}
